@@ -14,28 +14,27 @@ struct ContentView: View
         ZStack
         {
             Image("background-plain")
+                .resizable()
                 .ignoresSafeArea()
             
             VStack(alignment: .center, spacing: 40.0)
             {
+                Spacer()
                 Image("logo")
-                
+                Spacer()
                 HStack
                 {
-                    Spacer()
                     Spacer()
                     Image("card2")
                     Spacer()
                     Image("card3")
                     Spacer()
-                    Spacer()
                 }
-                
+                Spacer()
                 Image("button")
-                
+                Spacer()
                 HStack
                 {
-                    Spacer()
                     VStack(spacing: 40.0)
                     {
                         Text("Player")
@@ -45,9 +44,6 @@ struct ContentView: View
                     .foregroundColor(.white)
                     
                     
-                    
-                    Spacer()
-                    
                     VStack(spacing: 40.0)
                     {
                         Text("CPU")
@@ -56,10 +52,8 @@ struct ContentView: View
                     }
                     .foregroundColor(.white)
                     
-                    
-                    
-                    Spacer()
                 }
+                Spacer()
             }
         }
     }
