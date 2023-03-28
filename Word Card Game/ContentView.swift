@@ -17,7 +17,7 @@ struct ContentView: View
                 .resizable()
                 .ignoresSafeArea()
             
-            VStack(alignment: .center, spacing: 40.0)
+            VStack()
             {
                 Spacer()
                 Image("logo")
@@ -35,24 +35,32 @@ struct ContentView: View
                 Spacer()
                 HStack
                 {
-                    VStack(spacing: 40.0)
+                    Spacer()
+                    VStack()
                     {
                         Text("Player")
+                            .font(.headline)
+                            .padding(.bottom, 10.0)
                         Text("0")
                             .font(.largeTitle)
                     }
-                    .foregroundColor(.white)
                     
                     
-                    VStack(spacing: 40.0)
+                    Spacer()
+                    
+                    VStack()
                     {
                         Text("CPU")
+                            .font(.headline)
+                            .padding(.bottom, 10.0)
                         Text("0")
                             .font(.largeTitle)
+                            
                     }
-                    .foregroundColor(.white)
+                    Spacer()
                     
                 }
+                .foregroundColor(.white)
                 Spacer()
             }
         }
