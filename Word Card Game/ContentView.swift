@@ -9,10 +9,14 @@ import SwiftUI
 
 struct ContentView: View
 {
+    var playerCard = "card2"
+    var cpuCard = "card3"
+    
     var body: some View
     {
         ZStack
         {
+            
             Image("background-plain")
                 .resizable()
                 .ignoresSafeArea()
@@ -25,13 +29,19 @@ struct ContentView: View
                 HStack
                 {
                     Spacer()
-                    Image("card2")
+                    Image(playerCard)
                     Spacer()
-                    Image("card3")
+                    Image(cpuCard)
                     Spacer()
                 }
                 Spacer()
-                Image("button")
+                
+                Button {
+                    print("toma tus cartas")
+                } label: {
+                    Image("button")
+                }
+                
                 Spacer()
                 HStack
                 {
