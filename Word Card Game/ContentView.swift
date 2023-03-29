@@ -11,6 +11,8 @@ struct ContentView: View
 {
     var playerCard = "card2"
     var cpuCard = "card3"
+    var playerScore = 0
+    var cpuScore = 0
     
     var body: some View
     {
@@ -37,7 +39,7 @@ struct ContentView: View
                 Spacer()
                 
                 Button {
-                    print("toma tus cartas")
+                    deal()
                 } label: {
                     Image("button")
                 }
@@ -51,7 +53,7 @@ struct ContentView: View
                         Text("Player")
                             .font(.headline)
                             .padding(.bottom, 10.0)
-                        Text("0")
+                        Text(String(playerScore))
                             .font(.largeTitle)
                     }
                     
@@ -63,7 +65,7 @@ struct ContentView: View
                         Text("CPU")
                             .font(.headline)
                             .padding(.bottom, 10.0)
-                        Text("0")
+                        Text(String(cpuScore))
                             .font(.largeTitle)
                             
                     }
@@ -75,6 +77,12 @@ struct ContentView: View
             }
         }
     }
+    
+    func deal()
+    {
+        print("Deal Cards")
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider
