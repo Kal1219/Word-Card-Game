@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentView: View
 {
-    var playerCard = "card2"
-    var cpuCard = "card3"
+    //@State es una propiedad que cambio el atributo de la variable diciendo que es especial
+    @State var playerCard = "card2"
+    @State var cpuCard = "card3"
+    
     var playerScore = 0
     var cpuScore = 0
     
@@ -80,7 +82,11 @@ struct ContentView: View
     
     func deal()
     {
-        print("Deal Cards")
+        // Va a randomizar las cartas del Player
+        playerCard = "card" + String(Int.random(in: 2...14))
+        // Va a randomizar las cartas del CPU
+        cpuCard = "card" + String(Int.random(in: 2...14))
+        // Actualizar los Scores
     }
     
 }
