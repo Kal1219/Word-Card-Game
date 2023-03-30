@@ -13,8 +13,8 @@ struct ContentView: View
     @State var playerCard = "card2"
     @State var cpuCard = "card3"
     
-    var playerScore = 0
-    var cpuScore = 0
+    @State var playerScore = 0
+    @State var cpuScore = 0
     
     var body: some View
     {
@@ -82,11 +82,22 @@ struct ContentView: View
     
     func deal()
     {
+        // creamos las variables para usarlas y compararlas para dar el puntaje al jugador o al CPU
+        let playerCardValue = Int.random(in: 2...14)
+        let cpuCardValue = Int.random(in: 2...14)
         // Va a randomizar las cartas del Player
-        playerCard = "card" + String(Int.random(in: 2...14))
+        playerCard = "card" + String(playerCardValue)
         // Va a randomizar las cartas del CPU
-        cpuCard = "card" + String(Int.random(in: 2...14))
+        cpuCard = "card" + String(cpuCardValue)
         // Actualizar los Scores
+        if playerCardValue > cpuCardValue
+        {
+            playerScore += 1 // incremento de 1
+        }
+        else if cpuCardValue > playerCardValue
+        {
+            cpuScore += 1 // incremento de 1
+        }
     }
     
 }
